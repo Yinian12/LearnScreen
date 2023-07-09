@@ -1112,7 +1112,9 @@ style help_label_text:
 ## 其他屏幕
 ################################################################################
 
-
+# image confirm_frame_png :
+#     zoom(1920,1080)
+#     "gui_new/confirm/TextContainer.png"
 ## 确认屏幕 ########################################################################
 ##
 ## 当 Ren'Py 需要询问用户有关确定或取消的问题时，会调用确认屏幕。
@@ -1145,8 +1147,8 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("确定") action yes_action
-                textbutton _("取消") action no_action
+                textbutton _("YES") action yes_action
+                textbutton _("NO") action no_action
 
     ## 右键点击退出并答复 no（取消）。
     key "game_menu" action no_action
@@ -1159,7 +1161,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame(["gui_new/confirm/TextContainer.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
