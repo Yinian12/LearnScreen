@@ -1147,8 +1147,17 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("YES") action yes_action
-                textbutton _("NO") action no_action
+                # textbutton _("YES") action yes_action
+                # textbutton _("NO") action no_action
+
+                imagebutton:
+                    idle    "gui_new/confirm/BlueBtn.png"
+                    hover   "gui_new/confirm/BlueBtnPressed.png"
+                    action yes_action
+                imagebutton:
+                    idle    "gui_new/confirm/RedBtn.png"
+                    hover   "gui_new/confirm/RedBtnPressed.png"
+                    action no_action
 
     ## 右键点击退出并答复 no（取消）。
     key "game_menu" action no_action
