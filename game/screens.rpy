@@ -344,33 +344,44 @@ screen main_menu():
     tag menu
 
     add "gui_new/main_menu/HomeScreenBackground.jpg" at truecenter
+    
 
     vbox:
-        yoffset -530
-        at center
+        xalign 0.5
+        yalign 0.5
+        ysize 500
         vbox:
-            yalign 0.2
-            add Text("dating sim!",font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+            vbox:
+                add Text("dating sim!", xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+            vbox:
+                at right
+                add Text("UI PACK",  xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 70, color = "#76AFDB", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+        spacing 80
         vbox:
-            yalign 0.2
-            xalign 0.99
-            add Text("UI PACK",font = "gui_new/main_menu/theboldfont.ttf", size = 70, color = "#76AFDB", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
-        # vbox:
-        #     spacing 5
-        #     textbutton _("START NEW GAME"):
-        #         background ""
+            xalign 0.5
+            spacing 50
+            button :
+                xsize 300
+                idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
+                hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
+                add Text("START NEW GAME",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
+                action Start()
+            button :
+                xalign 0.5
+                xsize 300
+                idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
+                hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
+                add Text("CHECK MESSAGES",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
 
-        #         action Start()
-            # textbutton _("CHECK MESSAGES"):
+                action ()
+            button :
+                xalign 0.5
+                xsize 300
+                idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
+                hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
+                add Text("CHARACTERS",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
 
-            #     action ()
-            # textbutton _("CHARACTERS"):
-
-            #     action ()
-
-
-
-
+                action ()
 
 
 
