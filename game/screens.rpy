@@ -346,17 +346,21 @@ screen main_menu():
     add "gui_new/main_menu/HomeScreenBackground.jpg" at truecenter
 
     vbox:
-        yoffset -550
+        yoffset -530
         at center
         vbox:
             yalign 0.2
             add Text("dating sim!",font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
         vbox:
-            spacing 5
-            textbutton _("START NEW GAME"):
-                background ""
+            yalign 0.2
+            xalign 0.99
+            add Text("UI PACK",font = "gui_new/main_menu/theboldfont.ttf", size = 70, color = "#76AFDB", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+        # vbox:
+        #     spacing 5
+        #     textbutton _("START NEW GAME"):
+        #         background ""
 
-                action Start()
+        #         action Start()
             # textbutton _("CHECK MESSAGES"):
 
             #     action ()
