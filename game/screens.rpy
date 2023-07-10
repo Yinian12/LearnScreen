@@ -357,11 +357,7 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -1149,24 +1145,23 @@ screen confirm(message, yes_action, no_action):
 
                 # textbutton _("YES") action yes_action
                 # textbutton _("NO") action no_action
-                frame:
-                    button:
-                        xsize 150
-                        ysize 80
-                        idle_foreground   Image("gui_new/confirm/BlueBtn.png",xalign = 0.5,yalign = 0.5)  
-                        hover_foreground  Image("gui_new/confirm/BlueBtnPressed.png",xalign = 0.5,yalign = 0.5)
+                button:
+                    xsize 300
+                    ysize 80
+                    idle_background   Image("gui_new/confirm/BlueBtn.png",xalign = 0.5,yalign = 0.5)  
+                    hover_background  Image("gui_new/confirm/BlueBtnPressed.png",xalign = 0.5,yalign = 0.5)
+                    add Text("YES",xalign = 0.5,yalign = 0.5,color = "#FFF")
 
-                        action yes_action
+                    action yes_action
                 
-                frame:
-                    button:
-                        xsize 150
-                        ysize 80
-                        # idle_foreground Text("idle", xalign = 0.5, yalign = 0.5)
-                        # hover_foreground Text("hover", xalign = 0.5, yalign = 0.5)
-                        idle_foreground   Image("gui_new/confirm/RedBtn.png",xalign = 0.5,yalign = 0.5)  
-                        hover_foreground  Image("gui_new/confirm/RedBtnPressed.png",xalign = 0.5,yalign = 0.5)
-                        action no_action
+                button:
+                    xsize 300
+                    ysize 80
+                    idle_background   Image("gui_new/confirm/RedBtn.png",xalign = 0.5,yalign = 0.5)  
+                    hover_background  Image("gui_new/confirm/RedBtnPressed.png",xalign = 0.5,yalign = 0.5)
+                    add Text("NO",xalign = 0.5,yalign = 0.5,color = "#FFF")
+
+                    action no_action
 
     ## 右键点击退出并答复 no（取消）。
     key "game_menu" action no_action
