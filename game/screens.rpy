@@ -353,13 +353,16 @@ screen main_menu():
             add Text("dating sim!",font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
         vbox:
             spacing 5
-            textbutton _("NEW GAME!!"):
+            textbutton _("START NEW GAME"):
+                background ""
 
                 action Start()
-            # textbutton _("QUIT"):
+            # textbutton _("CHECK MESSAGES"):
 
-            #     action Quit()
+            #     action ()
+            # textbutton _("CHARACTERS"):
 
+            #     action ()
 
 
 
