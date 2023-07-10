@@ -343,19 +343,27 @@ screen main_menu():
     ## 此语句可确保替换掉任何其他菜单屏幕。
     tag menu
 
-    add gui.main_menu_background
+    add "gui_new/main_menu/HomeScreenBackground.jpg" at truecenter
 
-    ## 此空框可使标题菜单变暗。
-    frame:
-        style "main_menu_frame"
-
-    ## use 语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
-    use navigation
-
-    if gui.show_name:
-
+    vbox:
+        yoffset -550
+        at center
         vbox:
-            style "main_menu_vbox"
+            yalign 0.2
+            add Text("dating sim!",font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+        vbox:
+            spacing 5
+            textbutton _("NEW GAME!!"):
+
+                action Start()
+            # textbutton _("QUIT"):
+
+            #     action Quit()
+
+
+
+
+
 
 
 
@@ -1146,7 +1154,7 @@ screen confirm(message, yes_action, no_action):
                 # textbutton _("YES") action yes_action
                 # textbutton _("NO") action no_action
                 button:
-                    xsize 300
+                    xsize 250
                     ysize 80
                     idle_background   Image("gui_new/confirm/BlueBtn.png",xalign = 0.5,yalign = 0.5)  
                     hover_background  Image("gui_new/confirm/BlueBtnPressed.png",xalign = 0.5,yalign = 0.5)
@@ -1155,7 +1163,7 @@ screen confirm(message, yes_action, no_action):
                     action yes_action
                 
                 button:
-                    xsize 300
+                    xsize 250
                     ysize 80
                     idle_background   Image("gui_new/confirm/RedBtn.png",xalign = 0.5,yalign = 0.5)  
                     hover_background  Image("gui_new/confirm/RedBtnPressed.png",xalign = 0.5,yalign = 0.5)
