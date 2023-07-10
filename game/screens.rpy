@@ -1149,15 +1149,24 @@ screen confirm(message, yes_action, no_action):
 
                 # textbutton _("YES") action yes_action
                 # textbutton _("NO") action no_action
+                frame:
+                    button:
+                        xsize 150
+                        ysize 80
+                        idle_foreground   Image("gui_new/confirm/BlueBtn.png",xalign = 0.5,yalign = 0.5)  
+                        hover_foreground  Image("gui_new/confirm/BlueBtnPressed.png",xalign = 0.5,yalign = 0.5)
 
-                imagebutton:
-                    idle    "gui_new/confirm/BlueBtn.png"
-                    hover   "gui_new/confirm/BlueBtnPressed.png"
-                    action yes_action
-                imagebutton:
-                    idle    "gui_new/confirm/RedBtn.png"
-                    hover   "gui_new/confirm/RedBtnPressed.png"
-                    action no_action
+                        action yes_action
+                
+                frame:
+                    button:
+                        xsize 150
+                        ysize 80
+                        # idle_foreground Text("idle", xalign = 0.5, yalign = 0.5)
+                        # hover_foreground Text("hover", xalign = 0.5, yalign = 0.5)
+                        idle_foreground   Image("gui_new/confirm/RedBtn.png",xalign = 0.5,yalign = 0.5)  
+                        hover_foreground  Image("gui_new/confirm/RedBtnPressed.png",xalign = 0.5,yalign = 0.5)
+                        action no_action
 
     ## 右键点击退出并答复 no（取消）。
     key "game_menu" action no_action
