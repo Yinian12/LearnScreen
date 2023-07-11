@@ -1171,6 +1171,7 @@ screen confirm(message, yes_action, no_action):
 
             label _(message):
                 style "confirm_prompt"
+                
                 xalign 0.5
 
             hbox:
@@ -1184,8 +1185,7 @@ screen confirm(message, yes_action, no_action):
                     ysize 80
                     idle_background   Image("gui_new/confirm/BlueBtn.png",xalign = 0.5,yalign = 0.5)  
                     hover_background  Image("gui_new/confirm/BlueBtnPressed.png",xalign = 0.5,yalign = 0.5)
-                    add Text("YES",xalign = 0.5,yalign = 0.5,color = "#FFF")
-
+                    add Text("YES",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", color = "#FFF")
                     action yes_action
                 
                 button:
@@ -1193,8 +1193,7 @@ screen confirm(message, yes_action, no_action):
                     ysize 80
                     idle_background   Image("gui_new/confirm/RedBtn.png",xalign = 0.5,yalign = 0.5)  
                     hover_background  Image("gui_new/confirm/RedBtnPressed.png",xalign = 0.5,yalign = 0.5)
-                    add Text("NO",xalign = 0.5,yalign = 0.5,color = "#FFF")
-
+                    add Text("NO",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", color = "#FFF")
                     action no_action
 
     ## 右键点击退出并答复 no（取消）。
