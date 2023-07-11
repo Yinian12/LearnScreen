@@ -372,7 +372,6 @@ screen main_menu():
                 idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
                 hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
                 add Text("CHECK MESSAGES",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
-
                 action ()
             button :
                 xalign 0.5
@@ -380,14 +379,15 @@ screen main_menu():
                 idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
                 hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
                 add Text("CHARACTERS",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
-
                 action ()
 
 
-    imagebutton xalign 1.0 yalign 1.0:
-        idle "gui_new/main_menu/GreenBtn.png"
-        hover "gui_new/main_menu/GreenBtnPressed.png"
-        foreground Image("gui_new/main_menu/Settings.png", zoom = 0.1, xalign = 0.5, yalign = 0.5)
+    button:
+        align(1.0, 1.0)
+        xysize(286,161)
+        idle_background "gui_new/main_menu/GreenBtn.png"
+        hover_background "gui_new/main_menu/GreenBtnPressed.png"
+        add "gui_new/main_menu/Settings.png" zoom 0.5 xalign 0.5 yalign 0.5
         action ()
 
 
