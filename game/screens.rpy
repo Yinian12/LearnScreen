@@ -349,29 +349,26 @@ screen main_menu():
 
     vbox:
         vbox:
-            add Text("dating sim!", xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
-            add Text("UI PACK",  xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 70, color = "#76AFDB", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ]) at right
+            spacing -20
+            add Text("dating sim!", size = 110, color = "#ECABD3", style = "main_menu_title" )
+            add Text("UI PACK",  size = 70, color = "#76AFDB", style = "main_menu_title" ) at right
         spacing 80
         vbox:
             spacing 50
             button :
-                xsize 500
-                idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
-                hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
+                idle_background   Image("gui_new/main_menu/Button.png", style = "main_menu_image")  
+                hover_background  Image("gui_new/main_menu/ButtonPressed.png", style = "main_menu_image")
                 text("START NEW GAME")
                 action Start()
             button :
-                xalign 0.5
-                xsize 500
-                idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
-                hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
+                idle_background   Image("gui_new/main_menu/Button.png", style = "main_menu_image")  
+                hover_background  Image("gui_new/main_menu/ButtonPressed.png", style = "main_menu_image")
                 text("CHECK MESSAGES")
                 action ()
             button :
-                xalign 0.5
-                xsize 500
-                idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
-                hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
+                xalign   0.5  # 不居中会左偏，不知原因
+                idle_background   Image("gui_new/main_menu/Button.png", style = "main_menu_image")  
+                hover_background  Image("gui_new/main_menu/ButtonPressed.png", style = "main_menu_image")
                 text("CHARACTERS")
                 action ()
     button:
@@ -379,23 +376,17 @@ screen main_menu():
         xysize(286,161)
         idle_background "gui_new/main_menu/GreenBtn.png"
         hover_background "gui_new/main_menu/GreenBtnPressed.png"
-        add "gui_new/main_menu/Settings.png" zoom 0.5 xalign 0.5 yalign 0.5
+        add Image("gui_new/main_menu/Settings.png", style = "main_menu_image") zoom 0.5 
         action ()
 
 
 
-style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
 
-style main_menu_frame:
-    # xsize 420
-    yfill True
-    background "gui/overlay/main_menu.png"
-
 style main_menu_vbox:
     align   (0.5,0.5)
-    # xmaximum 1200
+    xmaximum 1200
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
@@ -404,7 +395,13 @@ style main_menu_text:
     size    40
     color   "#58597C"
 
+style main_menu_title:
+    align   (0.5,0.5)
+    font    "gui_new/main_menu/theboldfont.ttf"
+    outlines [ (6, "#fff", 0, 0) ]
 
+style main_menu_image:
+    align   (0.5,0.5)
 
 ## 游戏菜单屏幕 ######################################################################
 ##
