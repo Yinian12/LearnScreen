@@ -345,43 +345,35 @@ screen main_menu():
 
     add "gui_new/main_menu/HomeScreenBackground.jpg" at truecenter
     
+    style_prefix "main_menu"
 
     vbox:
-        xalign 0.5
-        yalign 0.5
-        ysize 500
         vbox:
-            vbox:
-                add Text("dating sim!", xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
-            vbox:
-                at right
-                add Text("UI PACK",  xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 70, color = "#76AFDB", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+            add Text("dating sim!", xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 110, color = "#ECABD3", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ])
+            add Text("UI PACK",  xalign = 0.5, yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 70, color = "#76AFDB", outlines = [ (absolute(6), "#fff", absolute(0), absolute(0)) ]) at right
         spacing 80
         vbox:
-            xalign 0.5
             spacing 50
             button :
                 xsize 500
                 idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
                 hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
-                add Text("START NEW GAME",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
+                text("START NEW GAME")
                 action Start()
             button :
                 xalign 0.5
                 xsize 500
                 idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
                 hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
-                add Text("CHECK MESSAGES",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
+                text("CHECK MESSAGES")
                 action ()
             button :
                 xalign 0.5
                 xsize 500
                 idle_background   Image("gui_new/main_menu/Button.png",xalign = 0.5,yalign = 0.5)  
                 hover_background  Image("gui_new/main_menu/ButtonPressed.png",xalign = 0.5,yalign = 0.5)
-                add Text("CHARACTERS",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", size = 30, color = "#58597C")
+                text("CHARACTERS")
                 action ()
-
-
     button:
         align(1.0, 1.0)
         xysize(286,161)
@@ -392,35 +384,26 @@ screen main_menu():
 
 
 
-
-
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 420
+    # xsize 420
     yfill True
-
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    align   (0.5,0.5)
+    # xmaximum 1200
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
+    align   (0.5,0.5)
+    font    "gui_new/main_menu/theboldfont.ttf"
+    size    40
+    color   "#58597C"
 
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
 
 
 ## 游戏菜单屏幕 ######################################################################
