@@ -1136,26 +1136,27 @@ screen confirm(message, yes_action, no_action):
 
     zorder 200
 
-    style_prefix "confirm"
-
-    frame:
+    frame style "confirm_frame":
         vbox:
             align(0.5,0.2)
             text(message)  style "confirm_prompt_text" 
         hbox:
             align(0.5,0.7)
+            spacing 100
 
-            style_prefix "confirm_button"
-            spacing 300
             button:
+                xsize 200
+                ysize 150
                 idle_background   Image("gui_new/confirm/BlueBtn.png", style = "confirm_button_image" )  
                 hover_background  Image("gui_new/confirm/BlueBtnPressed.png", style = "confirm_button_image" )
-                text _("YES")
+                text _("YES") style "confirm_button_text"
                 action yes_action
             button:
+                xsize 200
+                ysize 150
                 idle_background   Image("gui_new/confirm/RedBtn.png", style = "confirm_button_image" )  
                 hover_background  Image("gui_new/confirm/RedBtnPressed.png", style = "confirm_button_image" )
-                text _("NO") 
+                text _("NO")  style "confirm_button_text"
                 action no_action
     
     ## 右键点击退出并答复 no（取消）。
@@ -1164,9 +1165,7 @@ screen confirm(message, yes_action, no_action):
 
 
 style confirm_frame is gui_frame
-style confirm_prompt is gui_prompt
 style confirm_prompt_text is gui_prompt_text
-style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
@@ -1181,9 +1180,6 @@ style confirm_prompt_text:
     size 38
     bold True
     layout "subtitle"
-
-style confirm_button:
-    properties gui.button_properties("confirm_button")
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
