@@ -348,6 +348,7 @@ screen main_menu():
     style_prefix "main_menu"
 
     vbox:
+        align   (0.5,0.7)
         vbox:
             spacing -20
             add Text("dating sim!", size = 110, color = "#ECABD3", style = "main_menu_title" )
