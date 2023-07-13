@@ -15,14 +15,6 @@ init python:
 define config.check_conflicting_properties = True
 
 
-image confirm_frame_png :
-    zoom(1920,1080)
-    "gui_new/confirm/TextContainer.png"
-
-
-
-
-
 ################################################################################
 ## GUI 配置变量
 ################################################################################

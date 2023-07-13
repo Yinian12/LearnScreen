@@ -1122,9 +1122,7 @@ style help_label_text:
 ## 其他屏幕
 ################################################################################
 
-# image confirm_frame_png :
-#     zoom(1920,1080)
-#     "gui_new/confirm/TextContainer.png"
+
 ## 确认屏幕 ########################################################################
 ##
 ## 当 Ren'Py 需要询问用户有关确定或取消的问题时，会调用确认屏幕。
@@ -1140,44 +1138,29 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
-
     frame:
-
         vbox:
-            xalign .5
-            yalign .5
-            spacing 45
+            align(0.5,0.2)
+            text(message)  style "confirm_prompt_text" 
+        hbox:
+            align(0.5,0.7)
 
-            label _(message):
-                style "confirm_prompt"
-                
-                xalign 0.5
-
-            hbox:
-                xalign 0.5
-                spacing 150
-
-                # textbutton _("YES") action yes_action
-                # textbutton _("NO") action no_action
-                button:
-                    xsize 250
-                    ysize 80
-                    idle_background   Image("gui_new/confirm/BlueBtn.png",xalign = 0.5,yalign = 0.5)  
-                    hover_background  Image("gui_new/confirm/BlueBtnPressed.png",xalign = 0.5,yalign = 0.5)
-                    add Text("YES",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", color = "#FFF")
-                    action yes_action
-                
-                button:
-                    xsize 250
-                    ysize 80
-                    idle_background   Image("gui_new/confirm/RedBtn.png",xalign = 0.5,yalign = 0.5)  
-                    hover_background  Image("gui_new/confirm/RedBtnPressed.png",xalign = 0.5,yalign = 0.5)
-                    add Text("NO",xalign = 0.5,yalign = 0.5, font = "gui_new/main_menu/theboldfont.ttf", color = "#FFF")
-                    action no_action
-
+            style_prefix "confirm_button"
+            spacing 300
+            button:
+                idle_background   Image("gui_new/confirm/BlueBtn.png", style = "confirm_button_image" )  
+                hover_background  Image("gui_new/confirm/BlueBtnPressed.png", style = "confirm_button_image" )
+                text _("YES")
+                action yes_action
+            button:
+                idle_background   Image("gui_new/confirm/RedBtn.png", style = "confirm_button_image" )  
+                hover_background  Image("gui_new/confirm/RedBtnPressed.png", style = "confirm_button_image" )
+                text _("NO") 
+                action no_action
+    
     ## 右键点击退出并答复 no（取消）。
     key "game_menu" action no_action
+
 
 
 style confirm_frame is gui_frame
@@ -1189,11 +1172,14 @@ style confirm_button_text is gui_medium_button_text
 style confirm_frame:
     background Frame(["gui_new/confirm/TextContainer.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
-    xalign .5
-    yalign .5
+    align(0.5,0.5)
+    xysize(825,440)
 
 style confirm_prompt_text:
-    textalign 0.5
+    # font "gui_new/main_menu/theboldfont.ttf" # 无中文字体
+    color "#44517F"
+    size 38
+    bold True
     layout "subtitle"
 
 style confirm_button:
@@ -1201,6 +1187,12 @@ style confirm_button:
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
+    align(0.5,0.5)
+    font "gui_new/main_menu/theboldfont.ttf"
+    color "#fff"
+
+style confirm_button_image:
+    align(0.5,0.5)
 
 
 ## 快进指示屏幕 ######################################################################
