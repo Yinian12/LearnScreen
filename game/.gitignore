@@ -1,0 +1,8 @@
+*.rpyc
+# game/tl/None/common.rpymc
+log.txt
+errors.txt
+traceback.txt
+project.json
+game/saves/*
+game/cache/*
